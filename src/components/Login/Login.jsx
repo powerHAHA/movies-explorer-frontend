@@ -23,7 +23,6 @@ export const Login = () => {
 					<div className='form__wrapper'>
 						<p className='form__caption'>E-mail</p>
 						<input
-							// className={isValid ? 'form__input' : 'form__input form__input_error'}
 							className='form__input'
 							name='email'
 							type='email'
@@ -58,6 +57,5 @@ export const Login = () => {
 				</p>
 			</div>
 		</section>
-
 	)
 }

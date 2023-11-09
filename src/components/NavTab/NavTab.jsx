@@ -3,7 +3,6 @@ import './NavTab.css';
 
 export const NavTab = () => {
 	return (
-
 		<section className="nav-tab">
 			<ul className='nav-tab__items'>
 				<li className='nav-tab__item'>

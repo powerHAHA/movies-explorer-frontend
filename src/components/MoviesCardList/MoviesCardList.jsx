@@ -27,7 +27,6 @@ export const MoviesCardList = ({ movies }) => {
 				<p className='card-list__text'>Ничего не найдено</p>
 			)}
 
-
 		</section>
 	);
 }

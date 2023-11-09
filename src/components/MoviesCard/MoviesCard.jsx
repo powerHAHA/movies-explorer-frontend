@@ -22,7 +22,6 @@ export const MoviesCard = ({ name, img, duration }) => {
 						type='button'
 						aria-label='Удалить' />
 				) : (
-					// <button className={isLiked ? 'movies-card__button movies-card__button_active' : 'movies-card__button'}/>
 					<button
 						className='button movies-card__button'
 						type='button'
