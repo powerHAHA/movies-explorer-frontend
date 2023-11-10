@@ -1,74 +1,65 @@
-import React, { useState } from 'react';
-import { Main } from '../Main/Main';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
-import { Movies } from '../Movies/Movies';
-import { Routes, Route, useLocation } from 'react-router-dom';
-import { ProtectedRoute } from '../ProtectedRoute';
-import { SavedMovies } from '../SavedMovies/SavedMovies';
-import { Register } from '../Register/Register';
-import { Login } from '../Login/Login';
-import { Header } from '../Header/Header';
-import { Profile } from '../Profile/Profile';
-import { PageNotFound } from '../PageNotFound/PageNotFound';
-import { BurgerMenu } from '../BurgerMenu/BurgerMenu';
-// Временно
-import { initialMovies } from '../moviesList';
-import { Footer } from '../Footer/Footer';
-
+import Header from '../Header/Header';
+import Main from '../Main/Main';
+import Footer from '../Footer/Footer';
+import Movies from '../Movies/Movies';
+import SavedMovies from '../SavedMovies/SavedMovies';
+import Profile from '../Profile/Profile';
+import Register from '../Register/Register';
+import Login from '../Login/Login';
+import Navigation from '../Navigation/Navigation';
+import PageNotFound from '../PageNotFound/PageNotFound';
 
 function App() {
+  return (
+    <div className="App">
+      <Router>
+        <Routes>
 
-	const { pathname } = useLocation();
-	const [isLoggedIn, setIsLoggedIn] = useState(false);
-	const [burgerIsOpened, setBurgerIsOpened] = useState(false);
-	const [movies, setMovies] = useState(initialMovies);
+          <Route exact path={'/'} element={<>
+            <Header />
+            <Main />
+            <Footer />
+          </>}>
+          </Route>
 
-	function burgerOpen() {
-		setBurgerIsOpened(true);
-	}
+          <Route exact path={'/signup'} element={<>
+            <Register />
+          </>}>
+          </Route>
 
-	function burgerClose() {
-		setBurgerIsOpened(false);
-	}
+          <Route exact path={'/signin'} element={<>
+            <Login />
+          </>}>
+          </Route>
 
-
-	return (
-		<div className={pathname === '/' ? 'page' : 'page page_color_dark'}>
-			<div className='page__container'>
-				{pathname === '/' || pathname === '/movies' || pathname === '/saved-movies' || pathname === '/profile' ? (
-					<Header isLoggedIn={isLoggedIn} onOpen={burgerOpen} onClose={burgerClose} />) : ('')}
-				{isLoggedIn && <BurgerMenu onOpen={burgerIsOpened} onClose={burgerClose} />}
-				<main>
-					<Routes>
-						<Route path='/signup' element={<Register />} />
-						<Route path='/signin' element={<Login />} />
-						<Route path='/' element={<Main />} />
-						<Route path='/movies' element={
-							<ProtectedRoute
-								element={Movies}
-								isLoggedIn={isLoggedIn}
-								movies={movies}
-							/>}
-						/>
-						<Route path='/saved-movies' element={
-							<ProtectedRoute
-								element={SavedMovies}
-								isLoggedIn={isLoggedIn}
-								movies={movies}
-							/>} />
-						<Route path='/profile' element={
-							<ProtectedRoute
-								element={Profile}
-								isLoggedIn={isLoggedIn}
-							/>} />
-						<Route path='*' element={<PageNotFound />} />
-					</Routes>
-				</main>
-				{pathname === '/' || pathname === '/movies' || pathname === '/saved-movies' ? (<Footer></Footer>) : ''}
-
-			</div>
-		</div>
-	);
+          <Route exact path={'/movies'} element={<>
+            <Navigation />
+            <Movies />
+            <Footer />
+          </>}>
+          </Route>
+          <Route exact path={'/saved-movies'} element={<>
+            <Navigation />
+            <SavedMovies />
+            <Footer />
+          </>}>
+          </Route>
+          <Route exact path={'/profile'} element={<>
+            <Profile />
+          </>}>
+          </Route>
+          <Route exact path={'*'} element={
+            <>
+              < PageNotFound />
+            </>}>
+          </Route> 
+        </Routes>
+      </Router>
+    </div>
+  );
 }
 
 export default App;
