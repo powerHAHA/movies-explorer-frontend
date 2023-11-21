@@ -1,13 +1,24 @@
-.movies{
-    padding-bottom: 0px;
+.movies {
+	background: #202020;
+	height: 100%;
+	min-height: 100vh;
 }
 
-.movies_open{
-    opacity: 0.3;
+.form-container {
+	width: 100%;
+	margin: 0 auto;
+	padding: 60px 70px 10px;
+	box-sizing: border-box;
+}
+
+@media screen and (max-width: 1023px) {
+	.form-container {
+		padding: 80px 30px 10px;
+	}
 }
 
 @media screen and (max-width: 424px) {
-    .movies{
-        padding-bottom: 34px;
-    }
+	.form-container {
+		padding: 80px 14px 10px;
+	}
 }
