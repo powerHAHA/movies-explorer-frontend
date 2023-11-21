@@ -5,18 +5,16 @@ import { useFormWithValidation } from '../../hooks/useFormValidator';
 
 export const Profile = ({ onSignOut, onEditUserInfo, onError, onSuccess, isLoading }) => {
 
-	const [isVisible, setIsVisible] = useState(false) //видимость кнопки сохранить
+	const [isVisible, setIsVisible] = useState(false)
 	const [isDisable, setIsDisable] = useState(false);
 	const currentUser = useContext(CurrentUserContext);
 
 	const { values, setValues, handleChange, errors, isValid, resetForm } = useFormWithValidation();
 
-	// Берем данные из контекста и вставляем в инпуты
 	useEffect(() => {
 		setValues(currentUser)
 	}, [setValues, currentUser])
 
-	// Проверяем чтобы новые значения не совпадали со старыми
 	useEffect(() => {
 		if (currentUser.name !== values.name || currentUser.email !== values.email) {
 			setIsDisable(true)

@@ -52,8 +52,6 @@ function App() {
 		resetServerMessage();
 	}, [navigate]);
 
-
-	// Регистрация пользователя
 	function handleRegister({ name, email, password }) {
 		setIsLoading(true);
 		auth.register({ name, email, password }).then(() => {
@@ -64,7 +62,6 @@ function App() {
 		setIsLoading(false);
 	}
 
-	// Пользователь авторизовался
 	function handleLogin({ email, password }) {
 		setIsLoading(true);
 		auth.authorize({ email, password }).then((data) => {
@@ -77,7 +74,6 @@ function App() {
 		setIsLoading(false);
 	}
 
-	// Проверка токена
 	useEffect(() => {
 		function handleTokenCheck() {
 			const token = localStorage.getItem("jwt");
@@ -95,7 +91,6 @@ function App() {
 		handleTokenCheck();
 	}, [])
 
-	// Выход пользователя
 	const handleOnSignOut = useCallback(() => {
 		localStorage.clear();
 		setIsLoggedIn(false);
@@ -122,8 +117,6 @@ function App() {
 			localStorage.setItem('savedMovies', JSON.stringify(savedMovies));
 	}, [savedMovies, isLoggedIn]);
 
-
-	//Обновление данных о пользователе
 	function handleEditUserInfo({ name, email }) {
 		setIsLoading(true);
 		api.sendUserData({ name, email }).then(() => {
@@ -135,7 +128,6 @@ function App() {
 		setIsLoading(false);
 	}
 
-	// Добавить фильм в сохраненные
 	function handleMovieLike(movie) {
 		api.addMovie({
 			country: movie.country,
@@ -154,7 +146,6 @@ function App() {
 		}).catch((err) => console.log(`При сохраненнии фильма возникла ошибка: ${err}`));
 	}
 
-	// Удалить фильм из сохраненных
 	function handleMovieDelete(movie) {
 		api.deleteMovie(movie._id).then(() => {
 			setSavedMovies((savedMovies) => savedMovies.filter((item) => item.movieId !== movie.movieId));

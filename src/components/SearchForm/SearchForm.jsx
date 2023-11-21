@@ -9,13 +9,10 @@ export const SearchForm = ({ onSearch, filterCheckbox, onError }) => {
 
 	const [shortFilms, setShortFilms] = useState(false);
 	const [movieName, setMovieName] = useState('');
-
-	// Отслеживаем изменения инпута
 	const handleMovieChange = (e) => {
 		setMovieName(e.target.value);
 	};
 
-	// Отправляем инпут с запросом 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		if (!movieName) {
@@ -30,7 +27,6 @@ export const SearchForm = ({ onSearch, filterCheckbox, onError }) => {
 
 	};
 
-	// Отслеживаем изменения чекбокса
 	const handleShortFilmsChange = () => {
 		setShortFilms(!shortFilms);
 		if (!movieName) {
@@ -42,7 +38,6 @@ export const SearchForm = ({ onSearch, filterCheckbox, onError }) => {
 		}
 	};
 
-	// После перезагрузки страницы, если фильтры были установлены и фильмы были найдены - выведи их
 	useEffect(() => {
 		if (pathname === '/movies') {
 			const filterMovieName = localStorage.getItem('movieName');

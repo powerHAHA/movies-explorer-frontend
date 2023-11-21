@@ -11,7 +11,6 @@ export const Movies = ({ savedMovies, onLikeMovie, onDeleteMovie }) => {
 	const [isLoading, setIsLoading] = useState(false);
 	const [serverErrorMessage, setServerErrorMessage] = useState('');
 
-	//Получаем список фильмов из localStorage, если их нет, делаем запрос на сервер и записываем их в localStorage когда пользователь делает запрос
 	function getAllMovies(movieName, shortFilms) {
 		setIsLoading(true);
 		const allMovies = JSON.parse(localStorage.getItem('allMovies'));
@@ -31,8 +30,6 @@ export const Movies = ({ savedMovies, onLikeMovie, onDeleteMovie }) => {
 			filterMovies(movieName, shortFilms);
 		}
 	}
-
-	// Функция фильрации фильмов
 	const filterMovies = (movieName, shortFilms) => {
 		const allMovies = JSON.parse(localStorage.getItem('allMovies'));
 

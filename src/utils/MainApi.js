@@ -1,5 +1,5 @@
 const apiOptions = {
-	url: 'https://api.movies-player.nomoredomainsrocks.ru',
+	url: '/',
 }
 
 class Api {
@@ -25,7 +25,7 @@ class Api {
 		return fetch(url, options).then(this._handleResponse)
 	}
 
-	// Получение данных о пользователе с сервера
+	// Получение данных о польователе с сервера
 	getUserData() {
 		return this._request(`${this._url}/users/me`, {
 			method: 'GET',
@@ -36,7 +36,6 @@ class Api {
 		})
 	}
 
-	// Отправка полученных данных о пользователе на сервер
 	sendUserData({ name, email }) {
 		return this._request(`${this._url}/users/me`, {
 			method: 'PATCH',
@@ -51,7 +50,6 @@ class Api {
 		})
 	}
 
-	// Получить сохраненные пользователем фильмы
 	getSavedMovies() {
 		return this._request(`${this._url}/movies`, {
 			method: 'GET',
@@ -62,7 +60,6 @@ class Api {
 		})
 	}
 
-	// Добавить фильм в сохраненные
 	addMovie(movie) {
 		return this._request(`${this._url}/movies`, {
 			method: 'POST',
@@ -74,7 +71,6 @@ class Api {
 		})
 	}
 
-	// Удалить фильм из сохраненных
 	deleteMovie(movieId) {
 		return this._request(`${this._url}/movies/${movieId}`, {
 			method: 'DELETE',
