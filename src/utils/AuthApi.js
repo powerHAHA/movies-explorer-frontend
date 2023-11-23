@@ -1,5 +1,5 @@
 const authOptions = {
-	url: '/',
+	url: '/api.movies-player.nomoredomainsrocks.ru',
 	headers: {
 		'Content-Type': 'application/json'
 	}

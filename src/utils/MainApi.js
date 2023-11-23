@@ -1,5 +1,5 @@
 const apiOptions = {
-	url: '/',
+	url: '/api.movies-player.nomoredomainsrocks.ru',
 }
 
 class Api {
@@ -25,7 +25,6 @@ class Api {
 		return fetch(url, options).then(this._handleResponse)
 	}
 
-	// Получение данных о польователе с сервера
 	getUserData() {
 		return this._request(`${this._url}/users/me`, {
 			method: 'GET',
