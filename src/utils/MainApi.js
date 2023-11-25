@@ -1,5 +1,5 @@
 const apiOptions = {
-	url: 'api.movies-player.nomoredomainsmonster.ru',
+	url: 'https://api.movies-player.nomoredomainsmonster.ru',
 }
 
 class Api {

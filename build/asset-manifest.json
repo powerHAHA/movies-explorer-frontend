@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.9683b2fd.css",
+    "main.js": "/static/js/main.a33da220.js",
+    "static/js/787.5530211c.chunk.js": "/static/js/787.5530211c.chunk.js",
+    "static/media/studentPhoto.jpg": "/static/media/studentPhoto.3f63b82ea94e6c42262b.jpg",
+    "static/media/Inter-Medium.woff": "/static/media/Inter-Medium.9053572c46aeb4b16caa.woff",
+    "static/media/Inter-Regular.woff": "/static/media/Inter-Regular.8c206db99195777c6769.woff",
+    "static/media/Inter-Medium.woff2": "/static/media/Inter-Medium.293fd13dbca5a3e450ef.woff2",
+    "static/media/Inter-Regular.woff2": "/static/media/Inter-Regular.c8ba52b05a9ef10f4758.woff2",
+    "static/media/account.svg": "/static/media/account.4d40c9eda71406c75f64fc1d0c989491.svg",
+    "static/media/logo-promo.svg": "/static/media/logo-promo.4850206398467b2311114f25733e5cf2.svg",
+    "static/media/logo.svg": "/static/media/logo.be2d72c0ff28d062fd41479474e11c90.svg",
+    "index.html": "/index.html",
+    "static/media/like-off.svg": "/static/media/like-off.be66a5b1bb85248470b1.svg",
+    "static/media/burger-menu.svg": "/static/media/burger-menu.111cfc3a3545a9ff785c.svg",
+    "static/media/like-on.svg": "/static/media/like-on.ad970ac93732e059871d.svg",
+    "static/media/delete.svg": "/static/media/delete.14e7ea4f784cc4ccfdcb.svg",
+    "static/media/burger-menu-close.svg": "/static/media/burger-menu-close.d29fe99e15dcb5bff2b9.svg",
+    "static/media/button-search.svg": "/static/media/button-search.6a541f8e3050ec94023c.svg",
+    "main.9683b2fd.css.map": "/static/css/main.9683b2fd.css.map",
+    "main.a33da220.js.map": "/static/js/main.a33da220.js.map",
+    "787.5530211c.chunk.js.map": "/static/js/787.5530211c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9683b2fd.css",
+    "static/js/main.a33da220.js"
+  ]
+}
