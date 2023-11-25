@@ -10,8 +10,7 @@ https://www.figma.com/file/6FMWkB94wE7KTkcCgUXtnC/%D0%94%D0%B8%D0%BF%D0%BB%D0%BE
 
 ## Ссылки на проект
 
-IP 158.160.124.211
+IP 158.160.109.0
 
 Frontend movies-player.nomoredomainsmonster.ru
-
 Backend api.movies-player.nomoredomainsmonster.ru
